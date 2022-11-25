@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "find-process": "^1.4.7"
+  },
+  "name": "shell",
+  "version": "1.0.0",
+  "description": "Buidling a shell using nodejs",
+  "main": "shell.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kartik rai",
+  "license": "ISC"
+}
