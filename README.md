@@ -6,4 +6,4 @@ As it's name suggests it is a bash like shell build using JavaScript in nodeJs. 
 
 ## Getting Started
 
-- Clone Git repo
+- Clone the Git reposetory

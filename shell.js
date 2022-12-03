@@ -28,17 +28,21 @@ defaultPrint();
 
 // Change Directory
 async function changeDirectory(command) {
-  if (command.length === 2) {
-    directoryPath = homedir;
-    return;
-  }
-  const args = command.slice(3);
-
-  if (path.isAbsolute(args)) {
-    directoryPath = args;
-  } else {
-    const anotherPath = path.join(directoryPath, args);
-    directoryPath = path.resolve(directoryPath, anotherPath);
+  try {
+    if (command.length === 2) {
+      directoryPath = homedir;
+      return;
+    }
+    const args = command.slice(3);
+    await fs.promises.readdir(directoryPath + "/" + args);
+    if (path.isAbsolute(args)) {
+      directoryPath = args;
+    } else {
+      const anotherPath = path.join(directoryPath, args);
+      directoryPath = path.resolve(directoryPath, anotherPath);
+    }
+  } catch (e) {
+    console.log("Path not found!");
   }
 }
 
@@ -122,7 +126,7 @@ async function handleCommand(line) {
   const command = line.toString().trim();
 
   if (command.startsWith("cd")) {
-    changeDirectory(command);
+    await changeDirectory(command);
   } else if (command.startsWith("ls")) {
     await listDirectory(command);
   } else if (command === "pwd") {
@@ -135,7 +139,7 @@ async function handleCommand(line) {
   } else if (command.startsWith("bg")) {
     await fgToBg(command);
   } else {
-    runBin();
+    runBin(command);
   }
 
   defaultPrint();
