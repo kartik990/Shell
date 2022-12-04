@@ -15,5 +15,5 @@ node shell.js
 
 ## Screenshots
 <img src="https://raw.githubusercontent.com/kartik990/Shell/master/ss/1.png">
-<img src="https://raw.githubusercontent.com/kartik990/Shell/master/ss/2.png">
+<!-- <img src="https://raw.githubusercontent.com/kartik990/Shell/master/ss/2.png"> -->
 <img src="https://raw.githubusercontent.com/kartik990/Shell/master/ss/3.png">
