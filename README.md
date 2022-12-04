@@ -6,6 +6,7 @@ As it's name suggests it is a bash like shell build using JavaScript in nodeJs. 
 
 ## Getting Started
 
+- Operating system must be Linux for smooth operations  
 - Clone the Git repository
 - Install dependences using given command in application directory 
 ```
